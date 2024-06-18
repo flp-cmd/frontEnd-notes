@@ -28,6 +28,7 @@ export const Form = styled.form`
   }
 
   > p {
+    margin-top: 1rem;
     font-size: 1.4rem;
     color: ${({ theme }) => theme.COLORS.GRAY_100};
   }
