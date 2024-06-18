@@ -23,7 +23,7 @@ export function Profile() {
   const [passwordOld, setPasswordOld] = useState("")
   const [passwordNew, setPasswordNew] = useState("")
 
-  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}files/${user.avatar}` : avatarPlaceholder
   const [avatar, setAvatar] = useState(avatarUrl)
   const [avatarFile, setAvatarFile] = useState(null)
 
@@ -38,6 +38,7 @@ export function Profile() {
     const userUpdated = Object.assign(user, updated)
 
     await updateProfile({ user: userUpdated, avatarFile })
+    goBack()
   }
 
   function handleChangeAvatar(e){
@@ -82,7 +83,6 @@ export function Profile() {
           placeholder="Nome"
           type="text"
           icon={FiUser}
-          value={name}
           onChange={e => setName(e.target.value)}
         />
 
@@ -90,7 +90,6 @@ export function Profile() {
           placeholder="Email"
           type="text"
           icon={FiMail}
-          value={email}
           onChange={e => setEmail(e.target.value)}
         />
 

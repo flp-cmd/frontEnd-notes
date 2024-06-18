@@ -86,7 +86,7 @@ export function New() {
         <Form>
           <header>
             <h1>Criar nota</h1>
-            <buttonText className="backButton" onClick={goBack} >Voltar</buttonText>
+            <ButtonText className="backButton" onClick={goBack} >Voltar</ButtonText>
           </header>
 
           <Input
