@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+import { FiArrowLeft } from "react-icons/fi"
+
 import { api } from "../../services/api.js"
 
 import { useNavigate } from "react-router-dom"
@@ -16,7 +18,7 @@ import { Section } from "../../components/section"
 
 import { Button } from "../../components/button"
 
-import { ButtonText } from "../../components/buttonText/index.jsx"
+import { ButtonText } from "../../components/buttonText"
 
 import { Container, Form } from "./styles.js"
 
@@ -59,6 +61,18 @@ export function New() {
       return alert("Digite um título da nota!")
     }
 
+    if (!description) {
+      return alert("Digite uma descrição da nota!")
+    }
+
+    if (links.length === 0) {
+      return alert("Digite pelo menos um link!")
+    }
+
+    if (tags.length === 0) {
+      return alert ("Digite pelo menos uma tag!")
+    }
+
     if (newLink) {
       return alert("Você digitou um novo link mas não adicionou!")
     }
@@ -86,7 +100,10 @@ export function New() {
         <Form>
           <header>
             <h1>Criar nota</h1>
-            <ButtonText className="backButton" onClick={goBack} >Voltar</ButtonText>
+            <button onClick={() => navigate("/")}>
+            <FiArrowLeft/>
+            Voltar
+            </button>
           </header>
 
           <Input

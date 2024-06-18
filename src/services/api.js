@@ -1,6 +1,5 @@
 import axios from "axios"
 
-
 export const api = axios.create({
-  baseURL: 'https://api-notes-t1mj.onrender.com/'
+  baseURL: import.meta.env.VITE_BASE_URL,
 })

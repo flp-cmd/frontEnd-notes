@@ -37,10 +37,15 @@ export const Form = styled.form`
     font-size: 3.6rem;
     }
     
-    .backButton {
+    button {
       font-size: 2rem;
+      align-items: center;
+      display: flex;
+      gap: .5rem;
       cursor: pointer;
       color: ${({ theme }) => theme.COLORS.GRAY_100};
+      background: none;
+      border: none;
     }
   }
 
